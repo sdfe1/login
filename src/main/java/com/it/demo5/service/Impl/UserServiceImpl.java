@@ -24,12 +24,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(String username, String password) {
-        //登录
-        //输入用户名密码
-        //是否输入
-        //输入
-        //判断用户名是否存在，若不存在，直接返回错误；
-        // 若存在 ，判断密码是否正确
         User user = userMapper.selectUserByUsername(username);
         if (user != null) {
             String Password = Md5Util.getMD5String(password);
